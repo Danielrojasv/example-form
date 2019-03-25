@@ -32,6 +32,7 @@ export class HomeComponent {
       'phone': new FormControl( '', [
         Validators.required,
         Validators.minLength(14),
+        Validators.maxLength(14),
       ]),
       'email': new FormControl( '', [
         Validators.required,
@@ -40,7 +41,8 @@ export class HomeComponent {
       ]),
       'rut': new FormControl( '', [
         Validators.required,
-        Validators.minLength(11)
+        Validators.minLength(11),
+        Validators.maxLength(12)
       ]),
     });
   }
@@ -48,12 +50,22 @@ export class HomeComponent {
   submitValues(){
     this.isLoad = true;
     this.messageFeedback = "";
+    const phoneValue = this.register.get("phone").value;
+    if(phoneValue.length == 15){
+      this.register.get("phone").setValue(phoneValue.substring(0, phoneValue.length-1));
+    }
+
+    const rutValue = this.register.get("rut").value;
+    if(rutValue.length == 13){
+      this.register.get("rut").setValue(rutValue.substring(0, rutValue.length-1));
+    }
+    
     if(!this._validateService.validSubmit(this.register)){
       this.isLoad = false;
       return;
     }
-
     this.regElem = this.register.value;
+  
     this._registerService.newRegister( this.regElem ).subscribe( (resp) => {
       this.isLoad = false;
       if(resp == 0){
