@@ -1,0 +1,73 @@
+<div class="home-content">
+    <div class="wrap" [ngClass]="{ 'hide-success': successResponse }">
+        <div class="title-content">
+            <h1>Cursos de Verano Pro</h1>
+        </div>
+
+        <div class="subtitle-content">
+            <p>No dejes pasar esta increíble oportunidad. Inscríbete acá.</p>
+        </div>
+
+        <form [formGroup]="register" (ngSubmit)="submitValues()" class="form-content clearfix">
+
+            <div class="form-row clearfix">
+                <div class="input-content">
+                    <label>Nombre <span class="required">*</span></label>
+                    <input formControlName="name" type="text" [ngClass]="{ 'error-input' : errors.name.error }" placeholder="Ej. Jose Canseco">
+                    <div class="form-feedback" [ngClass]="{ 'error-feedback' : errors.name.error }">
+                        <p>{{ errors.name.message }}</p>
+                    </div>
+                </div>
+                <div class="input-content">
+                    <label>Télefono <span class="required">*</span></label>
+                    <input formControlName="phone" type="text" [ngClass]="{ 'error-input' : errors.phone.error }" placeholder="Ej. +569 3772 9376" (input)="this._validateService.formatPhone($event)" />
+                    <div class="form-feedback" [ngClass]="{ 'error-feedback' : errors.phone.error }">
+                        <p>{{ errors.phone.message }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row clearfix">
+                <div class="input-content">
+                    <label>Correo <span class="required">*</span></label>
+                    <input formControlName="email" type="text" [ngClass]="{ 'error-input' : errors.email.error }" placeholder="Ej. correo@gmail.com" />
+                    <div class="form-feedback" [ngClass]="{ 'error-feedback' : errors.email.error }">
+                        <p>{{ errors.email.message }}</p>
+                    </div>
+                </div>
+                <div class="input-content">
+                    <label>RUT <span class="required">*</span></label>
+                    <input formControlName="rut" (input)="this._validateService.formateaRut($event)" type="text" [ngClass]="{ 'error-input' : errors.rut.error }" placeholder="Ej. 26.492.283-1" />
+                    <div class="form-feedback" [ngClass]="{ 'error-feedback' : errors.rut.error }">
+                        <p>{{ errors.rut.message }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit-content">
+                <input type="submit" value="Inscribirse" />
+            </div>
+
+            <div class="feedback-response" [ngClass]="{ 'display-feedback' : messageFeedback  }">
+                <p>{{ messageFeedback }} </p>
+            </div>
+        </form>
+
+    </div>
+    <div class="wrap">
+        <div class="success-response" [ngClass]="{ 'display-success': successResponse }">
+            <div class="icon-success"></div>
+            <div class="success-text-content">
+                <h2>Felicitaciones</h2>
+                <p>Hemos recibido tu inscripción de manera correcta. Pronto nos pondremos en contacto.</p>
+                <div class="logo-content"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="onload" [ngClass]="{'isLoad': isLoad}">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>

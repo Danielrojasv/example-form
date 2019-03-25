@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './assets/css/general.css';
+@import './assets/css/layout.css';
+@import './assets/css/responsive.css';
+@import './assets/css/clearfix.css';
+@import './assets/css/reset.css';
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

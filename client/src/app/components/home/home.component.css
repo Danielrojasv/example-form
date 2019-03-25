@@ -1,0 +1,275 @@
+.home-content {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../../../assets/img/background-phone.jpg);
+    background-position: top center;
+    background-size: cover;
+    padding-top: 60px;
+    overflow: hidden;
+}
+
+.home-content .title-content {
+    display: block;
+    width: 45%;
+    margin: 20px auto;
+}
+
+.home-content .title-content h1 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 60px;
+    text-align: center;
+}
+
+.home-content .subtitle-content {
+    width: 100%;
+}
+
+.home-content .subtitle-content p {
+    text-align: center;
+    color: #fff;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.home-content .form-content {
+    width: 100%;
+    margin: 40px auto;
+}
+
+.home-content .form-content .input-content {
+    float: left;
+    width: 46%;
+    margin: auto 2%;
+}
+
+.home-content .form-content .input-content label {
+    color: #fff;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.home-content .form-content .input-content label span {
+    color: #cb6e79;
+    font-weight: 600;
+}
+
+.home-content .form-content .input-content input {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    font-size: 15px;
+    margin: 20px 0px;
+    border-radius: 6px;
+}
+
+.home-content .form-content .input-content input.error-input {
+    box-shadow: 0px 0px 3px 1px #f55151;
+}
+
+.home-content .form-content .submit-content {
+    width: 100%;
+    margin: 35px auto;
+    float: left;
+}
+
+.home-content .form-content .submit-content input[type="submit"] {
+    width: 96%;
+    margin: auto;
+    background-color: #58be96;
+    color: #fff;
+    display: block;
+    border-radius: 6px;
+    padding: 18px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.home-content .form-content .submit-content input[type="submit"]:hover {
+    background-color: #3f886b;
+}
+
+.form-content .input-content .form-feedback {
+    color: #f55151;
+    ;
+    font-weight: 600;
+    opacity: 0;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -ns-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+}
+
+.form-content .input-content .form-feedback.error-feedback {
+    margin-bottom: 15px;
+    opacity: 1;
+}
+
+.feedback-response {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    height: 0;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -ns-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+}
+
+.feedback-response.display-feedback {
+    height: 100px;
+}
+
+.feedback-response p {
+    background-color: rgb(252, 217, 120);
+    border: 1px solid rgb(247, 185, 51);
+    width: 96%;
+    margin: auto;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color: rgb(95, 65, 0);
+}
+
+.success-response {
+    width: 100%;
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+    -webkit-transition: 0.5s opcity;
+    -moz-transition: 0.5s opacity;
+    -ns-transition: 0.5s opacity;
+    -o-transition: 0.5s opacity;
+    transition: 0.5s opacity;
+}
+
+.success-response .icon-success {
+    width: 100%;
+    background-image: url(../../../assets/img/check.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.success-response .success-text-content h2 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.success-response .success-text-content p {
+    text-align: center;
+    color: #fff;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.success-response .logo-content {
+    background-image: url(../../../assets/img/logo-opera.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 60px;
+    background-position: center;
+    margin-top: 40px;
+}
+
+.success-response.display-success {
+    height: auto;
+    opacity: 1;
+    margin: 80px auto;
+}
+
+.hide-success {
+    display: none;
+}
+
+.onload {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    z-index: -1;
+    -webkit-transition: 0.5;
+    -moz-transition: 0.5;
+    -ns-transition: 0.5;
+    -o-transition: 0.5;
+    transition: 0.5;
+}
+
+.onload.isLoad {
+    opacity: 1;
+    z-index: 99;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.double-bounce1,
+.double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #58be96;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%,
+    100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bounce {
+    0%,
+    100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .home-content .title-content {
+        width: 100%;
+    }
+    .home-content .form-content .input-content {
+        width: 96%;
+    }
+    .success-response .success-text-content h2 {
+        font-size: 45px;
+    }
+}

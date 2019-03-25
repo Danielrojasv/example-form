@@ -1,0 +1,17 @@
+.header {
+    height: 60px;
+    background-color: #fff;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+}
+
+.header .logo-content {
+    display: block;
+    background-image: url(../../../assets/img/logo-opera.png);
+    height: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 150px;
+    background-size: auto;
+}
